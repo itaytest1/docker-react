@@ -19,4 +19,5 @@ Run npm run build
 
 #Copy from builder phase abc
 From nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
