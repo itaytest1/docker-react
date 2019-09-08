@@ -2,7 +2,7 @@
 From node:alpine as builder
 
 #Chnage the workdir, create it if not exist
-WORKDIR /usr/myapp
+WORKDIR /myapp
 
 #Copy the files needed for npm install
 COPY ./package.json ./
@@ -15,8 +15,5 @@ Run npm install
 COPY ./ ./
 
 #This will create build directory
-Run npm run build
+CMD ["npm", "run", "start"]
 
-#Copy from builder phase
-From node:nginx
-COPY --from=builder /usr/myapp/build /usr/share/nginx
