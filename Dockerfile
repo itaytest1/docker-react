@@ -5,7 +5,7 @@ From node:alpine as builder
 WORKDIR '/app'
 
 #Copy the files needed for npm install
-COPY package.json .
+COPY package.json ./
 
 #Download and install a dependency
 Run npm config set registry http://registry.npmjs.org/  
